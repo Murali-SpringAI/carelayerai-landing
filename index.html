@@ -3,137 +3,239 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CareLayer</title>
+  <title>CareLayer AI</title>
+  <meta name="description" content="CareLayer AI is building AI-powered healthcare platforms for operations, revenue cycle, workflow automation, and decision support." />
   <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --soft: #f1f5f9;
+      --accent: #0f766e;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f8fafc;
-      color: #0f172a;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
       padding: 32px;
     }
+
     .container {
-      max-width: 980px;
+      max-width: 1040px;
       margin: 0 auto;
-      background: white;
-      padding: 52px;
-      border-radius: 18px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+      background: var(--card);
+      padding: 56px;
+      border-radius: 22px;
+      box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
     }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
     h1 {
-      font-size: 46px;
-      margin-bottom: 12px;
+      font-size: 52px;
+      line-height: 1.08;
+      margin: 0 0 18px;
+      letter-spacing: -0.03em;
     }
+
     h2 {
-      margin-top: 36px;
-      font-size: 24px;
-      color: #0f172a;
+      margin-top: 38px;
+      font-size: 25px;
+      letter-spacing: -0.01em;
     }
+
     p {
       font-size: 18px;
-      line-height: 1.65;
-      color: #475569;
+      line-height: 1.7;
+      color: var(--muted);
     }
+
+    .tagline {
+      font-size: 22px;
+      color: #334155;
+      max-width: 820px;
+      margin-bottom: 28px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .box {
+      background: var(--soft);
+      border: 1px solid var(--border);
+      padding: 22px;
+      border-radius: 16px;
+    }
+
+    .box strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text);
+      font-size: 17px;
+    }
+
+    .box span {
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 16px;
+    }
+
     ul {
       margin-top: 16px;
       padding-left: 22px;
       color: #334155;
       font-size: 17px;
-      line-height: 1.6;
+      line-height: 1.7;
     }
-    .tagline {
-      font-size: 21px;
-      color: #334155;
-      margin-bottom: 28px;
-    }
+
     .highlight {
-      background: #f1f5f9;
-      padding: 22px;
-      border-radius: 14px;
-      margin-top: 28px;
+      background: var(--soft);
+      border: 1px solid var(--border);
+      padding: 26px;
+      border-radius: 18px;
+      margin-top: 30px;
     }
+
     .contact {
-      margin-top: 36px;
-      font-weight: bold;
+      margin-top: 38px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
       font-size: 18px;
+      font-weight: 700;
     }
+
     a {
-      color: #0f766e;
+      color: var(--accent);
       text-decoration: none;
+      font-weight: 700;
     }
+
     a:hover {
       text-decoration: underline;
+    }
+
+    @media (max-width: 760px) {
+      body {
+        padding: 18px;
+      }
+
+      .container {
+        padding: 30px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .tagline {
+        font-size: 19px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>CareLayer</h1>
+  <main class="container">
+    <div class="eyebrow">Healthcare Operations • AI • Workflow Intelligence</div>
+
+    <h1>CareLayer AI</h1>
 
     <p class="tagline">
       Building an AI-powered platform to improve healthcare operations,
-      financial workflows, and decision support.
+      financial workflows, workflow automation, and decision support.
     </p>
 
     <h2>The Problem</h2>
     <p>
-      Healthcare systems continue to operate on fragmented workflows, manual coordination,
-      and disconnected data. This leads to inefficiencies in operations, revenue leakage,
-      administrative burden, and delayed decision-making.
+      Healthcare organizations continue to operate with fragmented workflows,
+      manual coordination, disconnected data, and administrative bottlenecks.
+      These gaps create operational inefficiency, revenue leakage, avoidable
+      rework, and delayed decision-making.
     </p>
 
     <h2>Our Approach</h2>
     <p>
-      CareLayer is designed as a modular intelligence layer that works with existing
-      healthcare systems — enabling automation, workflow visibility, and better operational
-      decisions without requiring organizations to replace their core infrastructure.
+      CareLayer AI is being designed as a modular intelligence layer that works
+      with existing healthcare systems instead of replacing them. The goal is to
+      help teams automate workflows, surface insights, reduce administrative
+      friction, and make better operational decisions.
     </p>
 
-    <ul>
-      <li>Hospital operations and workflow automation</li>
-      <li>Billing, claims, and revenue cycle optimization</li>
-      <li>Prior authorization and administrative efficiency</li>
-      <li>AI-assisted decision support and intelligent data access</li>
-      <li>Notification and coordination platforms for operational teams</li>
-    </ul>
+    <div class="grid">
+      <div class="box">
+        <strong>Hospital Operations</strong>
+        <span>Improve visibility into workflows, escalations, delays, and operational coordination.</span>
+      </div>
+      <div class="box">
+        <strong>Revenue Cycle & Claims</strong>
+        <span>Reduce billing errors, missed charges, claim denials, and underpayment risk.</span>
+      </div>
+      <div class="box">
+        <strong>Prior Authorization</strong>
+        <span>Support documentation readiness, payer-specific rules, and faster turnaround.</span>
+      </div>
+      <div class="box">
+        <strong>Decision Support</strong>
+        <span>Use AI-assisted data access and semantic search to help teams answer workflow questions faster.</span>
+      </div>
+    </div>
 
     <h2>Current Focus</h2>
     <p>
-      We are currently engaging with healthcare operators, clinicians, product leaders,
-      and technology executives to validate high-impact problem areas before building
-      production-ready solutions.
+      We are currently engaging with healthcare operators, clinicians, product
+      leaders, and technology executives across the US and India to validate
+      high-impact problem areas before building production-ready solutions.
     </p>
 
     <div class="highlight">
       <h2>Founder Background</h2>
       <p>
-        CareLayer is led by <strong>Murali Nidugondi</strong>, a senior technology leader
-        with 28+ years of experience in enterprise technology, healthcare IT, solution
-        architecture, cloud-native platforms, and AI-enabled systems.
+        CareLayer AI is led by
+        <a href="/mnidugondi.html">Murali Nidugondi</a>, a senior healthcare
+        technology leader with 20+ years of experience designing and modernizing
+        enterprise platforms across healthcare, distributed systems, cloud-native
+        architecture, and AI-enabled systems.
       </p>
       <p>
-        Murali has hands-on experience designing and building scalable platforms using
-        Java, Spring Boot, microservices, AWS, PostgreSQL, API-driven architectures, and
-        healthcare interoperability concepts including FHIR, HL7, and claims/eligibility
-        workflows.
-      </p>
-      <p>
-        His recent work includes building healthcare validation and reporting platforms,
-        AI-assisted workflow systems, and secure automation prototypes focused on real-world
-        operational problems.
+        Murali has worked with leading global healthcare technology organizations
+        including Siemens, Cerner, and Oracle Health, serving in roles such as
+        Solution Architect, Platform Lead, Architect, and Team Lead.
       </p>
     </div>
 
     <h2>Why Now</h2>
     <p>
-      AI is lowering the barrier to building intelligent software, but the real advantage
-      comes from understanding the right problems, workflows, and constraints. CareLayer
-      is focused on combining deep healthcare domain experience with practical execution.
+      AI is lowering the barrier to building intelligent software, but the real
+      advantage comes from understanding the right problems, workflows, data,
+      users, and constraints. CareLayer AI is focused on combining deep healthcare
+      technology experience with practical execution.
     </p>
 
     <div class="contact">
       Contact: <a href="mailto:hello@carelayerai.com">hello@carelayerai.com</a>
     </div>
-  </div>
+  </main>
 </body>
 </html>
