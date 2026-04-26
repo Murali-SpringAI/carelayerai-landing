@@ -7,63 +7,145 @@
   <meta name="description" content="Founder profile for Murali Nidugondi, healthcare technology leader, solution architect, and AI-enabled platform builder." />
   <style>
     :root {
-      --bg: #f8fafc;
-      --card: #ffffff;
+      --bg-1: #f8fafc;
+      --bg-2: #e0f2fe;
+      --bg-3: #ccfbf1;
+      --card: rgba(255,255,255,0.94);
       --text: #0f172a;
       --muted: #475569;
       --soft: #f1f5f9;
       --accent: #0f766e;
-      --border: #e2e8f0;
+      --accent-2: #0369a1;
+      --border: #dbeafe;
+      --shadow: 0 28px 80px rgba(15, 23, 42, 0.12);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
       color: var(--text);
+      background:
+        radial-gradient(circle at top left, var(--bg-3), transparent 32%),
+        radial-gradient(circle at top right, var(--bg-2), transparent 30%),
+        linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
       padding: 32px;
     }
 
-    .container {
-      max-width: 980px;
+    .page {
+      max-width: 1060px;
       margin: 0 auto;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      color: #334155;
+      font-size: 15px;
+    }
+
+    .brand {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 800;
+      box-shadow: 0 12px 28px rgba(15, 118, 110, 0.28);
+    }
+
+    .card {
       background: var(--card);
-      padding: 54px;
-      border-radius: 22px;
-      box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
+      border: 1px solid rgba(255,255,255,0.7);
+      backdrop-filter: blur(12px);
+      border-radius: 28px;
+      padding: 56px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      top: -90px;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(14,165,233,0.16), rgba(20,184,166,0.18));
+      z-index: 0;
+    }
+
+    .content { position: relative; z-index: 1; }
+
+    .profile-head {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 26px;
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 30px;
+      box-shadow: 0 20px 42px rgba(15, 118, 110, 0.28);
     }
 
     .eyebrow {
-      color: var(--accent);
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      display: inline-flex;
+      color: var(--accent-2);
+      background: #e0f2fe;
+      border: 1px solid #bae6fd;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      font-size: 13px;
+      font-size: 12px;
       margin-bottom: 14px;
     }
 
     h1 {
-      font-size: 46px;
-      line-height: 1.1;
+      font-size: 48px;
+      line-height: 1.08;
       margin: 0 0 8px;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.04em;
     }
 
     .subtitle {
       color: #334155;
-      margin-bottom: 26px;
       font-size: 20px;
       line-height: 1.5;
+      margin: 0;
     }
 
     h2 {
-      margin-top: 36px;
-      font-size: 24px;
-      letter-spacing: -0.01em;
+      margin-top: 40px;
+      font-size: 25px;
+      letter-spacing: -0.02em;
     }
 
     p {
@@ -76,201 +158,239 @@
       padding-left: 22px;
       color: #334155;
       font-size: 17px;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     .highlight {
-      background: var(--soft);
-      border: 1px solid var(--border);
+      background: linear-gradient(135deg, #f0fdfa, #eff6ff);
+      border: 1px solid #bae6fd;
       padding: 24px;
-      border-radius: 16px;
+      border-radius: 18px;
       margin-top: 26px;
+      font-size: 18px;
+      color: #334155;
+      line-height: 1.65;
+    }
+
+    .company-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 26px 0 8px;
+    }
+
+    .pill {
+      display: inline-flex;
+      background: #ffffff;
+      border: 1px solid #ccfbf1;
+      color: #115e59;
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-weight: 800;
+      font-size: 14px;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
-      margin-top: 18px;
+      margin-top: 20px;
     }
 
     .box {
-      background: var(--soft);
+      background: linear-gradient(180deg, #ffffff, #f8fafc);
       border: 1px solid var(--border);
-      padding: 20px;
-      border-radius: 15px;
+      padding: 22px;
+      border-radius: 18px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.04);
     }
 
     .box strong {
       display: block;
       margin-bottom: 8px;
       color: var(--text);
+      font-size: 17px;
     }
 
     .box span {
       color: var(--muted);
       font-size: 16px;
-      line-height: 1.55;
+      line-height: 1.6;
     }
 
     .links {
-      margin-top: 34px;
-      padding-top: 26px;
-      border-top: 1px solid var(--border);
+      margin-top: 40px;
+      padding: 26px;
+      border-radius: 20px;
+      background: #0f172a;
+      color: #cbd5e1;
       font-size: 17px;
-      line-height: 1.8;
+      line-height: 1.9;
     }
 
     a {
       color: var(--accent);
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 800;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
+    a:hover { text-decoration: underline; }
 
-    @media (max-width: 760px) {
-      body {
-        padding: 18px;
-      }
+    .links a { color: white; }
 
-      .container {
-        padding: 30px;
-      }
-
-      h1 {
-        font-size: 36px;
-      }
-
-      .subtitle {
-        font-size: 18px;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 780px) {
+      body { padding: 18px; }
+      .card { padding: 32px; border-radius: 22px; }
+      .profile-head { grid-template-columns: 1fr; }
+      h1 { font-size: 38px; }
+      .subtitle { font-size: 18px; }
+      .grid { grid-template-columns: 1fr; }
+      .nav { align-items: flex-start; gap: 16px; flex-direction: column; }
     }
   </style>
 </head>
 <body>
-  <main class="container">
-    <div class="eyebrow">Founder Profile</div>
-
-    <h1>Murali Nidugondi</h1>
-
-    <div class="subtitle">
-      Solution Architect | Healthcare Technology Leader | Distributed Systems |
-      AI-Enabled Platform Builder
-    </div>
-
-    <p>
-      I am a senior technology leader with 20+ years of experience designing,
-      scaling, and modernizing distributed enterprise platforms across healthcare,
-      cloud-native ecosystems, and mission-critical business workflows.
-    </p>
-
-    <p>
-      I have worked with leading global healthcare technology organizations
-      including <strong>Siemens</strong>, <strong>Cerner</strong>, and
-      <strong>Oracle Health</strong>, serving in roles such as
-      <strong>Solution Architect</strong>, <strong>Platform Lead</strong>,
-      <strong>Architect</strong>, and <strong>Team Lead</strong>.
-    </p>
-
-    <div class="highlight">
-      <strong>Current focus:</strong> Building CareLayer AI — an AI-powered
-      healthcare platform focused on improving hospital operations, billing and
-      claims workflows, prior authorization, workflow automation, and decision support.
-    </div>
-
-    <h2>Professional Background</h2>
-    <p>
-      My experience spans architecture strategy, event-driven microservices,
-      high-availability systems, healthcare interoperability, platform modernization,
-      and AI-enabled architectures including RAG, LLM integration, semantic search,
-      and intelligent workflow automation.
-    </p>
-
-    <h2>Enterprise Experience</h2>
-    <ul>
-      <li><strong>Oracle Health / Cerner:</strong> Solution Architect and Platform Lead focused on financial platform architecture, scalability, microservices optimization, Kubernetes-based deployment architecture, and engineering governance.</li>
-      <li><strong>Cerner / Siemens:</strong> Architect and Team Lead working on patient workflows, HL7-based integration systems, rule-based platforms, and modernization of legacy healthcare systems.</li>
-    </ul>
-
-    <h2>Architecture Impact</h2>
-    <div class="grid">
-      <div class="box">
-        <strong>Scalable Platforms</strong>
-        <span>Designed distributed systems supporting 10K+ concurrent users.</span>
+  <div class="page">
+    <nav class="nav">
+      <div class="brand">
+        <div class="logo">CL</div>
+        <span>CareLayer AI</span>
       </div>
-      <div class="box">
-        <strong>Performance Optimization</strong>
-        <span>Reduced latency by 30% through microservices architecture improvements.</span>
+      <a href="/">Back to Home</a>
+    </nav>
+
+    <main class="card">
+      <div class="content">
+        <section class="profile-head">
+          <div class="avatar">MN</div>
+          <div>
+            <div class="eyebrow">Founder Profile</div>
+            <h1>Murali Nidugondi</h1>
+            <p class="subtitle">
+              Solution Architect | Healthcare Technology Leader | Distributed Systems |
+              AI-Enabled Platform Builder
+            </p>
+          </div>
+        </section>
+
+        <p>
+          I am a senior technology leader with 20+ years of experience designing,
+          scaling, and modernizing distributed enterprise platforms across healthcare,
+          cloud-native ecosystems, and mission-critical business workflows.
+        </p>
+
+        <p>
+          I have worked with leading global healthcare technology organizations
+          including <strong>Siemens</strong>, <strong>Cerner</strong>, and
+          <strong>Oracle Health</strong>, serving in roles such as
+          <strong>Solution Architect</strong>, <strong>Platform Lead</strong>,
+          <strong>Architect</strong>, and <strong>Team Lead</strong>.
+        </p>
+
+        <div class="company-strip">
+          <span class="pill">Siemens</span>
+          <span class="pill">Cerner</span>
+          <span class="pill">Oracle Health</span>
+          <span class="pill">AWS</span>
+          <span class="pill">Java / Spring Boot</span>
+          <span class="pill">Healthcare AI</span>
+        </div>
+
+        <div class="highlight">
+          <strong>Current focus:</strong> Building CareLayer AI — an AI-powered
+          healthcare platform focused on improving hospital operations, billing and
+          claims workflows, prior authorization, workflow automation, and decision support.
+        </div>
+
+        <h2>Professional Background</h2>
+        <p>
+          My experience spans architecture strategy, event-driven microservices,
+          high-availability systems, healthcare interoperability, platform modernization,
+          and AI-enabled architectures including RAG, LLM integration, semantic search,
+          and intelligent workflow automation.
+        </p>
+
+        <h2>Enterprise Experience</h2>
+        <ul>
+          <li><strong>Oracle Health / Cerner:</strong> Solution Architect and Platform Lead focused on financial platform architecture, scalability, microservices optimization, Kubernetes-based deployment architecture, and engineering governance.</li>
+          <li><strong>Cerner / Siemens:</strong> Architect and Team Lead working on patient workflows, HL7-based integration systems, rule-based platforms, and modernization of legacy healthcare systems.</li>
+        </ul>
+
+        <h2>Architecture Impact</h2>
+        <div class="grid">
+          <div class="box">
+            <strong>Scalable Platforms</strong>
+            <span>Designed distributed systems supporting 10K+ concurrent users.</span>
+          </div>
+          <div class="box">
+            <strong>Performance Optimization</strong>
+            <span>Reduced latency by 30% through microservices architecture improvements.</span>
+          </div>
+          <div class="box">
+            <strong>Event-Driven Architecture</strong>
+            <span>Improved throughput by 20% through event-driven system design.</span>
+          </div>
+          <div class="box">
+            <strong>Healthcare Revenue Impact</strong>
+            <span>Delivered revenue-impacting systems and rule-based platforms in healthcare workflows.</span>
+          </div>
+        </div>
+
+        <h2>Core Expertise</h2>
+        <ul>
+          <li>Healthcare platforms, claims, eligibility, financial workflows, and interoperability</li>
+          <li>FHIR, HL7, X12 270/271, API-first integration, and canonical data models</li>
+          <li>Java, Spring Boot, microservices, REST APIs, and distributed systems</li>
+          <li>AWS, Kubernetes, CI/CD, resilience, scalability, and high availability</li>
+          <li>AI-enabled systems including RAG, LLM integration, embeddings, vector search, and semantic querying</li>
+          <li>Architecture governance, technical leadership, engineering mentorship, and stakeholder communication</li>
+        </ul>
+
+        <h2>Selected Platform Work</h2>
+        <ul>
+          <li><strong>Healthcare encounter validation and claim readiness:</strong> Platform concepts for validating encounter completeness, coverage readiness, and claim risk before submission.</li>
+          <li><strong>AI-powered reporting and analytics:</strong> Generic reporting framework with natural language interpretation and structured query generation.</li>
+          <li><strong>FHIR interoperability architecture:</strong> API-based healthcare integration using canonical models and adapter patterns.</li>
+          <li><strong>Semantic knowledge engine:</strong> AI-powered document intelligence using embeddings, vector search, and LLM-based answer generation.</li>
+          <li><strong>Secure AI automation:</strong> Agent-style automation prototypes using secure execution, JWT/RBAC controls, and policy enforcement.</li>
+        </ul>
+
+        <h2>What I’m Building</h2>
+        <p>
+          CareLayer AI is an early-stage healthcare technology initiative focused on
+          building practical, AI-enabled platforms that sit on top of existing healthcare
+          systems. The goal is to reduce operational friction, improve financial workflows,
+          support decision-making, and help healthcare teams act faster with better context.
+        </p>
+
+        <h2>Why This Matters</h2>
+        <p>
+          Healthcare organizations do not need more disconnected tools. They need intelligent
+          layers that understand workflows, integrate with existing systems, reduce manual
+          work, and help teams make better operational decisions. AI can accelerate this,
+          but success depends on deep domain understanding, practical architecture, and
+          disciplined execution.
+        </p>
+
+        <h2>Collaboration</h2>
+        <p>
+          I am actively engaging with healthcare operators, product leaders, technology
+          executives, clinicians, and domain experts across the US and India to identify
+          meaningful problems worth solving and potential opportunities for collaboration.
+        </p>
+
+        <div class="links">
+          Email: <a href="mailto:hello@carelayerai.com">hello@carelayerai.com</a><br/>
+          LinkedIn: <a href="https://www.linkedin.com/in/murali-nidugondi-3b378a192" target="_blank" rel="noopener">linkedin.com/in/murali-nidugondi-3b378a192</a><br/>
+          GitHub:
+          <a href="https://github.com/Murali-Springboot-Microservices" target="_blank" rel="noopener">Spring Boot / Microservices</a>
+          |
+          <a href="https://github.com/Murali-SpringAI" target="_blank" rel="noopener">Spring AI</a><br/>
+          <a href="/">← Back to CareLayer AI</a>
+        </div>
       </div>
-      <div class="box">
-        <strong>Event-Driven Architecture</strong>
-        <span>Improved throughput by 20% through event-driven system design.</span>
-      </div>
-      <div class="box">
-        <strong>Healthcare Revenue Impact</strong>
-        <span>Delivered revenue-impacting systems and rule-based platforms in healthcare workflows.</span>
-      </div>
-    </div>
-
-    <h2>Core Expertise</h2>
-    <ul>
-      <li>Healthcare platforms, claims, eligibility, financial workflows, and interoperability</li>
-      <li>FHIR, HL7, X12 270/271, API-first integration, and canonical data models</li>
-      <li>Java, Spring Boot, microservices, REST APIs, and distributed systems</li>
-      <li>AWS, Kubernetes, CI/CD, resilience, scalability, and high availability</li>
-      <li>AI-enabled systems including RAG, LLM integration, embeddings, vector search, and semantic querying</li>
-      <li>Architecture governance, technical leadership, engineering mentorship, and stakeholder communication</li>
-    </ul>
-
-    <h2>Selected Platform Work</h2>
-    <ul>
-      <li><strong>Healthcare encounter validation and claim readiness:</strong> Platform concepts for validating encounter completeness, coverage readiness, and claim risk before submission.</li>
-      <li><strong>AI-powered reporting and analytics:</strong> Generic reporting framework with natural language interpretation and structured query generation.</li>
-      <li><strong>FHIR interoperability architecture:</strong> API-based healthcare integration using canonical models and adapter patterns.</li>
-      <li><strong>Semantic knowledge engine:</strong> AI-powered document intelligence using embeddings, vector search, and LLM-based answer generation.</li>
-      <li><strong>Secure AI automation:</strong> Agent-style automation prototypes using secure execution, JWT/RBAC controls, and policy enforcement.</li>
-    </ul>
-
-    <h2>What I’m Building</h2>
-    <p>
-      CareLayer AI is an early-stage healthcare technology initiative focused on
-      building practical, AI-enabled platforms that sit on top of existing healthcare
-      systems. The goal is to reduce operational friction, improve financial workflows,
-      support decision-making, and help healthcare teams act faster with better context.
-    </p>
-
-    <h2>Why This Matters</h2>
-    <p>
-      Healthcare organizations do not need more disconnected tools. They need intelligent
-      layers that understand workflows, integrate with existing systems, reduce manual
-      work, and help teams make better operational decisions. AI can accelerate this,
-      but success depends on deep domain understanding, practical architecture, and
-      disciplined execution.
-    </p>
-
-    <h2>Collaboration</h2>
-    <p>
-      I am actively engaging with healthcare operators, product leaders, technology
-      executives, clinicians, and domain experts across the US and India to identify
-      meaningful problems worth solving and potential opportunities for collaboration.
-    </p>
-
-    <div class="links">
-      Email: <a href="mailto:hello@carelayerai.com">hello@carelayerai.com</a><br/>
-      LinkedIn: <a href="https://www.linkedin.com/in/murali-nidugondi-3b378a192" target="_blank" rel="noopener">linkedin.com/in/murali-nidugondi-3b378a192</a><br/>
-      GitHub:
-      <a href="https://github.com/Murali-Springboot-Microservices" target="_blank" rel="noopener">Spring Boot / Microservices</a>
-      |
-      <a href="https://github.com/Murali-SpringAI" target="_blank" rel="noopener">Spring AI</a><br/>
-      <a href="/">← Back to CareLayer AI</a>
-    </div>
-  </main>
+    </main>
+  </div>
 </body>
 </html>
