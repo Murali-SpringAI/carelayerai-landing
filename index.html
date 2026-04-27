@@ -2,280 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>CareLayer AI</title>
-    <meta name="description" content="CareLayer AI is building AI-powered healthcare platforms for operations, revenue cycle, workflow automation, and decision support." />
+
     <style>
-        :root {
-          --bg-1: #f8fafc;
-          --bg-2: #e0f2fe;
-          --bg-3: #ccfbf1;
-          --card: rgba(255,255,255,0.92);
-          --text: #0f172a;
-          --muted: #475569;
-          --soft: #f1f5f9;
-          --accent: #0f766e;
-          --accent-2: #0369a1;
-          --border: #dbeafe;
-          --shadow: 0 28px 80px rgba(15, 23, 42, 0.12);
-        }
-
-        * { box-sizing: border-box; }
-
         body {
+          font-family: Arial, sans-serif;
+          background: #f8fafc;
           margin: 0;
-          font-family: Arial, Helvetica, sans-serif;
-          color: var(--text);
-          background:
-            radial-gradient(circle at top left, var(--bg-3), transparent 32%),
-            radial-gradient(circle at top right, var(--bg-2), transparent 30%),
-            linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
-          padding: 32px;
+          padding: 30px;
+          color: #0f172a;
         }
 
-        .page {
-          max-width: 1120px;
-          margin: 0 auto;
-        }
-
-        .nav {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 24px;
-          color: #334155;
-          font-size: 15px;
-        }
-
-        .brand {
-          display: flex;
-          gap: 10px;
-          align-items: center;
-          font-weight: 800;
-          color: var(--text);
-          letter-spacing: -0.02em;
-        }
-
-        .logo {
-          width: 38px;
-          height: 38px;
-          border-radius: 12px;
-          background: linear-gradient(135deg, var(--accent), var(--accent-2));
-          display: grid;
-          place-items: center;
-          color: white;
-          font-weight: 800;
-          box-shadow: 0 12px 28px rgba(15, 118, 110, 0.28);
-        }
-
-        .nav a {
-          color: var(--accent);
-          text-decoration: none;
-          font-weight: 700;
-        }
-
-        .hero {
-          background: var(--card);
-          border: 1px solid rgba(255,255,255,0.7);
-          backdrop-filter: blur(12px);
-          border-radius: 28px;
-          padding: 58px;
-          box-shadow: var(--shadow);
-          overflow: hidden;
-          position: relative;
-        }
-
-        .hero:after {
-          content: "";
-          position: absolute;
-          right: -80px;
-          top: -80px;
-          width: 260px;
-          height: 260px;
-          border-radius: 50%;
-          background: linear-gradient(135deg, rgba(14,165,233,0.18), rgba(20,184,166,0.18));
-          z-index: 0;
-        }
-
-        .content {
-          position: relative;
-          z-index: 1;
-        }
-
-        .eyebrow {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          color: var(--accent-2);
-          background: #e0f2fe;
-          border: 1px solid #bae6fd;
-          padding: 8px 14px;
-          border-radius: 999px;
-          font-weight: 800;
-          letter-spacing: 0.04em;
-          text-transform: uppercase;
-          font-size: 12px;
-          margin-bottom: 18px;
+        .container {
+          max-width: 1000px;
+          margin: auto;
         }
 
         h1 {
-          font-size: 58px;
-          line-height: 1.04;
-          margin: 0 0 18px;
-          letter-spacing: -0.045em;
-          max-width: 840px;
-        }
-
-        .tagline {
-          font-size: 22px;
-          color: #334155;
-          line-height: 1.6;
-          max-width: 860px;
-          margin: 0 0 30px;
-        }
-
-        .cta-row {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 14px;
-          margin: 28px 0 10px;
-        }
-
-        .btn {
-          display: inline-block;
-          padding: 13px 18px;
-          border-radius: 12px;
-          text-decoration: none;
-          font-weight: 800;
-          border: 1px solid transparent;
-        }
-
-        .btn-primary {
-          background: linear-gradient(135deg, var(--accent), var(--accent-2));
-          color: white;
-          box-shadow: 0 14px 30px rgba(15, 118, 110, 0.22);
-        }
-
-        .btn-secondary {
-          background: white;
-          color: var(--accent);
-          border-color: #99f6e4;
-        }
-
-        h2 {
-          margin-top: 44px;
-          padding-top: 8px;
-          font-size: 26px;
-          letter-spacing: -0.02em;
+          font-size: 48px;
+          margin-bottom: 10px;
         }
 
         p {
+          color: #475569;
           font-size: 18px;
-          line-height: 1.7;
-          color: var(--muted);
-        }
-
-        .grid {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 18px;
-          margin-top: 22px;
-        }
-
-        .box {
-          background: linear-gradient(180deg, #ffffff, #f8fafc);
-          border: 1px solid var(--border);
-          padding: 24px;
-          border-radius: 18px;
-          box-shadow: 0 12px 28px rgba(15, 23, 42, 0.04);
-        }
-
-        .icon {
-          width: 42px;
-          height: 42px;
-          border-radius: 14px;
-          display: grid;
-          place-items: center;
-          background: #ecfeff;
-          color: var(--accent);
-          font-size: 22px;
-          margin-bottom: 14px;
-        }
-
-        .box strong {
-          display: block;
-          margin-bottom: 8px;
-          color: var(--text);
-          font-size: 18px;
-        }
-
-        .box span {
-          color: var(--muted);
           line-height: 1.6;
-          font-size: 16px;
         }
 
-        .highlight {
-          background: linear-gradient(135deg, #f0fdfa, #eff6ff);
-          border: 1px solid #bae6fd;
-          padding: 28px;
-          border-radius: 20px;
-          margin-top: 32px;
-        }
-
-        .founder-line {
-          display: flex;
-          gap: 18px;
-          align-items: flex-start;
-        }
-
-        .avatar {
-          min-width: 58px;
-          width: 58px;
-          height: 58px;
-          border-radius: 18px;
-          background: linear-gradient(135deg, var(--accent), var(--accent-2));
-          color: white;
-          display: grid;
-          place-items: center;
-          font-weight: 900;
-          font-size: 18px;
-          box-shadow: 0 14px 30px rgba(15, 118, 110, 0.22);
-        }
-
-        .prototype-card {
-          margin-top: 24px;
-          background: linear-gradient(180deg, #ffffff, #f8fafc);
-          border: 1px solid #e2e8f0;
-          padding: 20px;
+        .card {
+          background: white;
+          padding: 24px;
           border-radius: 16px;
+          margin-top: 30px;
           box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
         .audio-card {
-          margin-top: 18px;
-          display: grid;
-          grid-template-columns: 220px 1fr;
-          gap: 22px;
-          align-items: center;
-          background: #ffffff;
-          border: 1px solid #dbeafe;
-          border-radius: 18px;
-          padding: 18px;
-          box-shadow: 0 14px 34px rgba(15, 23, 42, 0.06);
-        }
-
-        .audio-cover {
           position: relative;
+          max-width: 500px;
           cursor: pointer;
-          border-radius: 16px;
-          overflow: hidden;
+          margin-top: 16px;
         }
 
-        .audio-cover img {
+        .audio-card img {
           width: 100%;
-          display: block;
-          border-radius: 16px;
+          border-radius: 12px;
         }
 
         .play-btn {
@@ -283,237 +55,116 @@
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          width: 68px;
-          height: 68px;
-          border-radius: 50%;
+          font-size: 32px;
+          background: rgba(0,0,0,0.6);
+          color: white;
           border: none;
-          background: rgba(15, 23, 42, 0.72);
-          color: white;
-          font-size: 30px;
+          border-radius: 50%;
+          width: 70px;
+          height: 70px;
           cursor: pointer;
-          box-shadow: 0 14px 30px rgba(15, 23, 42, 0.24);
         }
 
-        .audio-details h3 {
-          margin: 0 0 8px;
-          font-size: 22px;
-          letter-spacing: -0.02em;
-        }
-
-        .audio-details p {
-          margin: 0;
-          font-size: 16px;
-          line-height: 1.6;
-          color: #475569;
-        }
-
-        .audio-note {
-          margin-top: 12px;
-          font-size: 14px;
-          color: #64748b;
-        }
-
-        .contact {
-          margin-top: 42px;
-          padding: 26px;
-          border-radius: 20px;
-          background: #0f172a;
-          color: white;
-          display: flex;
-          justify-content: space-between;
-          gap: 18px;
-          align-items: center;
-          flex-wrap: wrap;
-        }
-
-        .contact p {
-          margin: 0;
-          color: #cbd5e1;
+        video {
+          width: 100%;
+          border-radius: 12px;
+          margin-top: 20px;
         }
 
         a {
-          color: var(--accent);
+          color: #0f766e;
           text-decoration: none;
-          font-weight: 800;
+          font-weight: bold;
         }
 
-        a:hover { text-decoration: underline; }
-
-        .contact a { color: white; }
-
-        @media (max-width: 780px) {
-          body { padding: 18px; }
-          .hero { padding: 34px; border-radius: 22px; }
-          h1 { font-size: 40px; }
-          .tagline { font-size: 19px; }
-          .grid { grid-template-columns: 1fr; }
-          .nav { align-items: flex-start; gap: 16px; flex-direction: column; }
-          .founder-line { flex-direction: column; }
-          .audio-card { grid-template-columns: 1fr; }
+        a:hover {
+          text-decoration: underline;
         }
+
+        .nav {
+          margin-bottom: 20px;
+        }
+
     </style>
 </head>
+
 <body>
-<div class="page">
-    <nav class="nav">
-        <div class="brand">
-            <div class="logo">CL</div>
-            <span>CareLayer AI</span>
+
+<div class="container">
+
+    <div class="nav">
+        <a href="mnidugondi.html">Founder Profile</a>
+    </div>
+
+    <h1>CareLayer AI</h1>
+
+    <p>
+        AI-powered healthcare platform focused on intelligent workflows,
+        validation, and operational decision support.
+    </p>
+
+    <!-- AUDIO SECTION -->
+    <div class="card">
+
+        <h2>Platform Audio Overview</h2>
+
+        <p>
+            Listen to a short overview of the CareLayer AI platform,
+            including workflow automation, validation layers, and healthcare use cases.
+        </p>
+
+        <div class="audio-card" id="audioCard">
+            <img src="carelayer-audio-cover.svg" />
+            <button class="play-btn" id="playBtn">▶</button>
         </div>
-        <a href="/mnidugondi.html">Founder Profile</a>
-    </nav>
 
-    <main class="hero">
-        <div class="content">
-            <div class="eyebrow">Healthcare Operations • AI • Workflow Intelligence</div>
+        <audio id="demoAudio">
+            <source src="nhcx-healthcare-ai.mp3" type="audio/mpeg">
+        </audio>
 
-            <h1>Intelligent workflow layers for modern healthcare operations.</h1>
+    </div>
 
-            <p class="tagline">
-                CareLayer AI is building AI-powered healthcare platforms to improve
-                hospital operations, revenue cycle workflows, prior authorization,
-                intelligent data access, and decision support.
-            </p>
+    <!-- VIDEO SECTION -->
+    <div class="card">
 
-            <div class="cta-row">
-                <a class="btn btn-primary" href="mailto:hello@carelayerai.com">Start a Conversation</a>
-                <a class="btn btn-secondary" href="/mnidugondi.html">Meet the Founder</a>
-            </div>
+        <h2>Platform Demo Video</h2>
 
-            <h2>The Problem</h2>
-            <p>
-                Healthcare organizations continue to operate with fragmented workflows,
-                manual coordination, disconnected data, and administrative bottlenecks.
-                These gaps create operational inefficiency, revenue leakage, avoidable
-                rework, and delayed decision-making.
-            </p>
+        <p>
+            This video demonstrates how interoperability and AI-driven workflows
+            can be combined to enable intelligent healthcare platforms.
+        </p>
 
-            <h2>Our Approach</h2>
-            <p>
-                CareLayer AI is being designed as a modular intelligence layer that works
-                with existing healthcare systems instead of replacing them. The goal is to
-                help teams automate workflows, surface insights, reduce administrative
-                friction, and make better operational decisions.
-            </p>
+        <video controls>
+            <source src="nhcx-healthcare-ai.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-            <div class="grid">
-                <div class="box">
-                    <div class="icon">🏥</div>
-                    <strong>Hospital Operations</strong>
-                    <span>Improve visibility into workflows, escalations, delays, and operational coordination.</span>
-                </div>
-                <div class="box">
-                    <div class="icon">🧾</div>
-                    <strong>Revenue Cycle & Claims</strong>
-                    <span>Reduce billing errors, missed charges, claim denials, and underpayment risk.</span>
-                </div>
-                <div class="box">
-                    <div class="icon">⚙️</div>
-                    <strong>Prior Authorization</strong>
-                    <span>Support documentation readiness, payer-specific rules, and faster turnaround.</span>
-                </div>
-                <div class="box">
-                    <div class="icon">🔎</div>
-                    <strong>Decision Support</strong>
-                    <span>Use AI-assisted data access and semantic search to help teams answer workflow questions faster.</span>
-                </div>
-            </div>
+    </div>
 
-            <h2>Current Focus</h2>
-            <p>
-                We are currently engaging with healthcare operators, clinicians, product
-                leaders, and technology executives across the US and India to validate
-                high-impact problem areas before building production-ready solutions.
-            </p>
+    <!-- VISION -->
+    <div class="card">
+        <h2>Platform Vision</h2>
 
-            <div class="highlight">
-                <div class="founder-line">
-                    <div class="avatar">MN</div>
-                    <div>
-                        <h2 style="margin-top:0;">Founder Background</h2>
-                        <p>
-                            CareLayer AI is led by <a href="/mnidugondi.html">Murali Nidugondi</a>,
-                            a senior healthcare technology leader with 20+ years of experience
-                            designing and modernizing enterprise platforms across healthcare,
-                            distributed systems, cloud-native architecture, and AI-enabled systems.
-                        </p>
-                        <p>
-                            Murali has worked with Siemens, Cerner, and Oracle Health, serving in
-                            roles such as Solution Architect, Platform Lead, Architect, and Team Lead.
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <p>
+            CareLayer AI enables intelligent healthcare workflows by combining
+            interoperability (FHIR-based integration) with AI-driven validation
+            and decision support.
+        </p>
 
-            <h2>Platform Vision & Prototypes</h2>
-            <p>
-                This overview explains how interoperability, intelligent validation, and AI-driven
-                workflows can be combined to support practical healthcare operations.
-            </p>
+        <p>
+            The goal is to reduce operational friction, improve claim readiness,
+            and enable real-time decisioning across healthcare systems.
+        </p>
+    </div>
 
-            <div class="prototype-card">
-                <h3 style="margin-top:0;">CareLayer AI Platform Overview</h3>
-
-                <p style="color:#475569;">
-                    Listen to a short introduction to the platform vision, healthcare workflow focus,
-                    and why intelligent validation layers matter.
-                </p>
-
-                <div class="audio-card">
-                    <div class="audio-cover" id="audioCard">
-                        <img src="carelayer-audio-cover.svg" alt="CareLayer AI audio overview cover" />
-                        <button id="playBtn" class="play-btn" type="button">▶</button>
-                    </div>
-
-                    <div class="audio-details">
-                        <h3>Interoperability + Intelligent Workflows</h3>
-                        <p>
-                            Bringing together healthcare interoperability and AI-driven workflow automation
-                            to enable real-time validation, decisioning, and execution across systems.
-                        </p>
-                        <p class="audio-note">Click the cover or play button to listen.</p>
-                    </div>
-                </div>
-
-                <audio id="demoAudio" preload="metadata">
-                    <source src="nhcx-healthcare-ai.mp4" type="audio/mpeg">
-                </audio>
-
-                <p style="margin-top:14px; font-size:14px; color:#64748b;">
-                    * Prototype architecture — adaptable to claims processing, prior authorization,
-                    and healthcare operations workflows.
-                </p>
-            </div>
-
-            <h2>Why Now</h2>
-            <p>
-                AI is lowering the barrier to building intelligent software, but the real
-                advantage comes from understanding the right problems, workflows, data,
-                users, and constraints. CareLayer AI is focused on combining deep healthcare
-                technology experience with practical execution.
-            </p>
-
-            <section class="contact">
-                <div>
-                    <strong>Interested in healthcare innovation?</strong>
-                    <p>We are validating problems with operators, clinicians, and technology leaders.</p>
-                </div>
-                <a href="mailto:hello@carelayerai.com">hello@carelayerai.com</a>
-            </section>
-        </div>
-    </main>
 </div>
 
 <script>
     const audio = document.getElementById('demoAudio');
     const playBtn = document.getElementById('playBtn');
-    const audioCard = document.getElementById('audioCard');
+    const card = document.getElementById('audioCard');
 
-    function toggleAudio(event) {
-      if (event) event.stopPropagation();
-
-      if (!audio) return;
-
+    function toggleAudio() {
       if (audio.paused) {
         audio.play();
         playBtn.textContent = '⏸';
@@ -523,19 +174,9 @@
       }
     }
 
-    if (playBtn) {
-      playBtn.addEventListener('click', toggleAudio);
-    }
-
-    if (audioCard) {
-      audioCard.addEventListener('click', toggleAudio);
-    }
-
-    if (audio) {
-      audio.addEventListener('ended', () => {
-        playBtn.textContent = '▶';
-      });
-    }
+    playBtn.addEventListener('click', toggleAudio);
+    card.addEventListener('click', toggleAudio);
 </script>
+
 </body>
 </html>
