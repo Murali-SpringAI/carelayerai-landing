@@ -24,6 +24,10 @@
           margin-bottom: 10px;
         }
 
+        h2 {
+          margin-top: 30px;
+        }
+
         p {
           color: #475569;
           font-size: 18px;
@@ -38,37 +42,14 @@
           box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        .audio-card {
-          position: relative;
-          max-width: 500px;
-          cursor: pointer;
-          margin-top: 16px;
-        }
-
-        .audio-card img {
-          width: 100%;
-          border-radius: 12px;
-        }
-
-        .play-btn {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font-size: 32px;
-          background: rgba(0,0,0,0.6);
-          color: white;
-          border: none;
-          border-radius: 50%;
-          width: 70px;
-          height: 70px;
-          cursor: pointer;
-        }
-
         video {
           width: 100%;
           border-radius: 12px;
           margin-top: 20px;
+        }
+
+        .nav {
+          margin-bottom: 20px;
         }
 
         a {
@@ -79,10 +60,6 @@
 
         a:hover {
           text-decoration: underline;
-        }
-
-        .nav {
-          margin-bottom: 20px;
         }
 
     </style>
@@ -103,45 +80,24 @@
         validation, and operational decision support.
     </p>
 
-    <!-- AUDIO SECTION -->
-    <div class="card">
-
-        <h2>Platform Audio Overview</h2>
-
-        <p>
-            Listen to a short overview of the CareLayer AI platform,
-            including workflow automation, validation layers, and healthcare use cases.
-        </p>
-
-        <div class="audio-card" id="audioCard">
-            <img src="carelayer-audio-cover.svg" />
-            <button class="play-btn" id="playBtn">▶</button>
-        </div>
-
-        <audio id="demoAudio">
-            <source src="nhcx-healthcare-ai.mp3" type="audio/mpeg">
-        </audio>
-
-    </div>
-
     <!-- VIDEO SECTION -->
     <div class="card">
 
         <h2>Platform Demo Video</h2>
 
         <p>
-            This video demonstrates how interoperability and AI-driven workflows
-            can be combined to enable intelligent healthcare platforms.
+            This demo shows how interoperability and AI-driven workflows
+            can enable intelligent healthcare operations and real-time decisioning.
         </p>
 
-        <video controls>
+        <video controls poster="carelayer-audio-cover.svg">
             <source src="nhcx-healthcare-ai.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
     </div>
 
-    <!-- VISION -->
+    <!-- PLATFORM VISION -->
     <div class="card">
         <h2>Platform Vision</h2>
 
@@ -152,31 +108,13 @@
         </p>
 
         <p>
-            The goal is to reduce operational friction, improve claim readiness,
-            and enable real-time decisioning across healthcare systems.
+            The platform is designed to improve operational efficiency,
+            reduce claim errors, and enable real-time insights across
+            healthcare systems.
         </p>
     </div>
 
 </div>
-
-<script>
-    const audio = document.getElementById('demoAudio');
-    const playBtn = document.getElementById('playBtn');
-    const card = document.getElementById('audioCard');
-
-    function toggleAudio() {
-      if (audio.paused) {
-        audio.play();
-        playBtn.textContent = '⏸';
-      } else {
-        audio.pause();
-        playBtn.textContent = '▶';
-      }
-    }
-
-    playBtn.addEventListener('click', toggleAudio);
-    card.addEventListener('click', toggleAudio);
-</script>
 
 </body>
 </html>
