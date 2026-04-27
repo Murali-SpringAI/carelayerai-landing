@@ -1,0 +1,28 @@
+<svg width="900" height="900" viewBox="0 0 900 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <radialGradient id="r" cx="25%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#99f6e4" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="900" rx="72" fill="#0f172a"/>
+  <rect width="900" height="900" rx="72" fill="url(#g)" opacity="0.92"/>
+  <circle cx="230" cy="200" r="260" fill="url(#r)"/>
+  <circle cx="720" cy="140" r="160" fill="#bae6fd" opacity="0.18"/>
+  <circle cx="760" cy="740" r="230" fill="#ccfbf1" opacity="0.16"/>
+  <g transform="translate(0,20)">
+    <text x="90" y="190" font-family="Arial, Helvetica, sans-serif" font-size="52" fill="#e0f2fe" font-weight="700" letter-spacing="2">CARE LAYER AI</text>
+    <text x="90" y="310" font-family="Arial, Helvetica, sans-serif" font-size="88" fill="#ffffff" font-weight="900">Healthcare</text>
+    <text x="90" y="415" font-family="Arial, Helvetica, sans-serif" font-size="88" fill="#ffffff" font-weight="900">Workflow</text>
+    <text x="90" y="520" font-family="Arial, Helvetica, sans-serif" font-size="88" fill="#ffffff" font-weight="900">Intelligence</text>
+    <text x="92" y="610" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#dbeafe">Audio Overview</text>
+  </g>
+  <g transform="translate(370 670)">
+    <circle cx="80" cy="80" r="80" fill="#ffffff" opacity="0.94"/>
+    <polygon points="58,42 58,118 124,80" fill="#0f766e"/>
+  </g>
+</svg>

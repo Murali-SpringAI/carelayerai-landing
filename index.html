@@ -271,6 +271,86 @@
 
     .contact a { color: white; }
 
+
+    .audio-card {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 22px;
+      align-items: center;
+      margin-top: 24px;
+      background: linear-gradient(180deg, #ffffff, #f8fafc);
+      border: 1px solid #e2e8f0;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .audio-cover {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      background: #0f172a;
+      min-height: 180px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+    }
+
+    .audio-cover img {
+      width: 100%;
+      height: 100%;
+      min-height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .play-btn {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 68px;
+      height: 68px;
+      border-radius: 999px;
+      border: none;
+      background: rgba(15, 23, 42, 0.72);
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+    }
+
+    .play-btn:hover {
+      background: rgba(15, 118, 110, 0.88);
+    }
+
+    .audio-meta h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+    }
+
+    .audio-meta p {
+      margin: 0 0 14px;
+      font-size: 16px;
+    }
+
+    .audio-progress {
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 14px;
+    }
+
+    .audio-progress-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      transition: width 0.15s linear;
+    }
+
+
     @media (max-width: 780px) {
       body { padding: 18px; }
       .hero { padding: 34px; border-radius: 22px; }
@@ -279,6 +359,7 @@
       .grid { grid-template-columns: 1fr; }
       .nav { align-items: flex-start; gap: 16px; flex-direction: column; }
       .founder-line { flex-direction: column; }
+      .audio-card { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -382,6 +463,33 @@
               to enable intelligent healthcare platforms.
           </p>
 
+          <div class="audio-card">
+              <div class="audio-cover" id="audioCover">
+                  <img src="/carelayer-audio-cover.svg" alt="CareLayer AI audio overview cover" />
+                  <button id="audioPlayBtn" class="play-btn" type="button" aria-label="Play audio overview">▶</button>
+              </div>
+
+              <div class="audio-meta">
+                  <h3>Listen to the CareLayer AI overview</h3>
+                  <p>
+                      A short audio introduction to the platform vision, healthcare workflow focus,
+                      and why intelligent validation layers matter.
+                  </p>
+                  <audio id="overviewAudio" preload="metadata">
+                      <source src="/carelayer-demo-overview.mp3" type="audio/mpeg">
+                      Your browser does not support the audio element.
+                  </audio>
+                  <div class="audio-progress" aria-hidden="true">
+                      <div id="audioProgressFill" class="audio-progress-fill"></div>
+                  </div>
+                  <p style="margin-top:10px; font-size:14px; color:#64748b;">
+                      Place your MP3 at <strong>src/main/resources/static/carelayer-demo-overview.mp3</strong>
+                      or update the audio source path in this file.
+                  </p>
+              </div>
+          </div>
+
+
           <div style="
                   margin-top:24px;
                   background: linear-gradient(180deg, #ffffff, #f8fafc);
@@ -436,5 +544,49 @@
       </div>
     </main>
   </div>
+
+  <script>
+    const overviewAudio = document.getElementById('overviewAudio');
+    const audioPlayBtn = document.getElementById('audioPlayBtn');
+    const audioCover = document.getElementById('audioCover');
+    const audioProgressFill = document.getElementById('audioProgressFill');
+
+    function toggleOverviewAudio() {
+      if (!overviewAudio) return;
+
+      if (overviewAudio.paused) {
+        overviewAudio.play();
+        audioPlayBtn.textContent = '⏸';
+      } else {
+        overviewAudio.pause();
+        audioPlayBtn.textContent = '▶';
+      }
+    }
+
+    if (audioPlayBtn && overviewAudio) {
+      audioPlayBtn.addEventListener('click', (event) => {
+        event.stopPropagation();
+        toggleOverviewAudio();
+      });
+    }
+
+    if (audioCover && overviewAudio) {
+      audioCover.addEventListener('click', toggleOverviewAudio);
+    }
+
+    if (overviewAudio) {
+      overviewAudio.addEventListener('ended', () => {
+        audioPlayBtn.textContent = '▶';
+        if (audioProgressFill) audioProgressFill.style.width = '0%';
+      });
+
+      overviewAudio.addEventListener('timeupdate', () => {
+        if (!audioProgressFill || !overviewAudio.duration) return;
+        const percent = (overviewAudio.currentTime / overviewAudio.duration) * 100;
+        audioProgressFill.style.width = `${percent}%`;
+      });
+    }
+  </script>
+
 </body>
 </html>
