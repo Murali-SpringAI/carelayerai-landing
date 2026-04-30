@@ -253,6 +253,69 @@
           box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
+        /* ── New: video badge ─────────────────────────────────────── */
+        .video-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 7px;
+          font-size: 11px;
+          font-weight: 800;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          padding: 5px 11px;
+          border-radius: 999px;
+          margin-bottom: 12px;
+        }
+        .video-badge.badge-interop {
+          background: #e0f2fe;
+          color: #0369a1;
+          border: 1px solid #bae6fd;
+        }
+        .video-badge.badge-investor {
+          background: #f0fdf4;
+          color: #15803d;
+          border: 1px solid #bbf7d0;
+        }
+
+        /* ── New: investor demo card dark variant ─────────────────── */
+        .prototype-card.investor-card {
+          margin-top: 20px;
+          background: linear-gradient(160deg, #0f172a 0%, #0c2340 100%);
+          border: 1px solid #1e3a5f;
+        }
+        .investor-card h3 {
+          color: #f1f5f9;
+        }
+        .investor-card .video-meta {
+          color: #64748b;
+          font-size: 14px;
+          margin-top: 12px;
+        }
+        .investor-card p {
+          color: #94a3b8;
+        }
+
+        /* ── New: feature pill row inside investor card ───────────── */
+        .pill-row {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin: 14px 0 20px;
+        }
+        .pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          background: rgba(255,255,255,0.07);
+          border: 1px solid rgba(255,255,255,0.12);
+          color: #94a3b8;
+          font-size: 12px;
+          font-weight: 700;
+          padding: 5px 12px;
+          border-radius: 999px;
+        }
+        .pill span { color: #38bdf8; }
+
         .video-wrap {
           position: relative;
           width: 100%;
@@ -265,11 +328,17 @@
           background: #0f172a;
         }
 
-       .video-wrap video {
+        .video-wrap video {
           width: 100%;
           height: 100%;
           object-fit: contain;
           background: #0f172a;
+        }
+
+        /* ── New: investor card video has stronger glow ───────────── */
+        .investor-card .video-wrap {
+          box-shadow: 0 18px 60px rgba(8, 145, 178, 0.22);
+          border: 1px solid #1e3a5f;
         }
 
         .contact {
@@ -308,6 +377,7 @@
           .grid { grid-template-columns: 1fr; }
           .nav { align-items: flex-start; gap: 16px; flex-direction: column; }
           .founder-line { flex-direction: column; }
+          .pill-row { gap: 6px; }
         }
     </style>
 </head>
@@ -407,14 +477,16 @@
                 </div>
             </div>
 
-            <h2>Platform Vision & Prototypes</h2>
+            <h2>Platform Vision &amp; Demos</h2>
 
             <p>
-                This demo shows how interoperability and AI-driven workflows can be combined
-                to enable intelligent healthcare platforms.
+                The demos below show two sides of the CareLayer AI platform — the interoperability
+                and workflow engine, and the AI-powered validation and reporting intelligence layer.
             </p>
 
+            <!-- ── Demo 1: Existing interoperability demo ───────────────────── -->
             <div class="prototype-card">
+                <div class="video-badge badge-interop">🔗 &nbsp;Interoperability Demo</div>
                 <h3 style="margin-top:0;">Interoperability + Intelligent Workflows</h3>
 
                 <p style="color:#475569;">
@@ -433,6 +505,40 @@
                 <p style="margin-top:12px; font-size:14px; color:#64748b;">
                     * Prototype architecture — adaptable to claims processing, prior authorization,
                     and healthcare operations workflows.
+                </p>
+            </div>
+
+            <!-- ── Demo 2: NEW investor/sales pitch demo ────────────────────── -->
+            <div class="prototype-card investor-card">
+                <div class="video-badge badge-investor">🎯 &nbsp;Investor &amp; Sales Demo</div>
+                <h3 style="margin-top:0;">CareLayer AI — Platform Overview</h3>
+
+                <p>
+                    A full walkthrough of the CareLayer AI platform — covering the problem,
+                    our solution architecture, a live validation and AI reporting demo, competitive
+                    differentiation, and market opportunity. Built for investors, design partners,
+                    and healthcare technology leaders.
+                </p>
+
+                <div class="pill-row">
+                    <div class="pill"><span>✓</span> Pre-submission validation</div>
+                    <div class="pill"><span>✓</span> AI-driven reporting</div>
+                    <div class="pill"><span>✓</span> No-code metadata engine</div>
+                    <div class="pill"><span>✓</span> FHIR · HL7 · X12</div>
+                    <div class="pill"><span>✓</span> Governed AI — no raw SQL</div>
+                    <div class="pill"><span>~5 min</span></div>
+                </div>
+
+                <div class="video-wrap">
+                    <video controls poster="carelayer-audio-cover.svg">
+                        <source src="carelayer-ai-careiq-demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <p class="video-meta">
+                    * Covers 16 slides with voiceover — problem framing, live demo, competitive
+                    comparison, market opportunity, and call to action.
                 </p>
             </div>
 
