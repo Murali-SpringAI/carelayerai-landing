@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0b1f3a"/>
+      <stop offset="100%" style="stop-color:#0c2240"/>
+    </linearGradient>
+    <linearGradient id="accent2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1450a3"/>
+      <stop offset="100%" style="stop-color:#0891b2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="720" fill="url(#bg2)"/>
+
+  <!-- Subtle dot grid -->
+  <g fill="#1e3a5f" opacity="0.6">
+    <circle cx="160" cy="180" r="2"/><circle cx="320" cy="180" r="2"/><circle cx="480" cy="180" r="2"/>
+    <circle cx="640" cy="180" r="2"/><circle cx="800" cy="180" r="2"/><circle cx="960" cy="180" r="2"/>
+    <circle cx="1120" cy="180" r="2"/>
+    <circle cx="160" cy="360" r="2"/><circle cx="320" cy="360" r="2"/><circle cx="480" cy="360" r="2"/>
+    <circle cx="640" cy="360" r="2"/><circle cx="800" cy="360" r="2"/><circle cx="960" cy="360" r="2"/>
+    <circle cx="1120" cy="360" r="2"/>
+    <circle cx="160" cy="540" r="2"/><circle cx="320" cy="540" r="2"/><circle cx="480" cy="540" r="2"/>
+    <circle cx="640" cy="540" r="2"/><circle cx="800" cy="540" r="2"/><circle cx="960" cy="540" r="2"/>
+    <circle cx="1120" cy="540" r="2"/>
+  </g>
+
+  <!-- Left accent bar -->
+  <rect x="0" y="0" width="6" height="720" fill="url(#accent2)"/>
+
+  <!-- Slide thumbnails row (decorative) -->
+  <rect x="80" y="220" width="156" height="88" rx="8" fill="#112240" stroke="#1e3a5f" stroke-width="1"/>
+  <rect x="84" y="224" width="148" height="12" rx="3" fill="#1450a3"/>
+  <rect x="84" y="242" width="100" height="6" rx="2" fill="#1e3a5f"/>
+  <rect x="84" y="254" width="120" height="6" rx="2" fill="#1e3a5f"/>
+  <rect x="84" y="266" width="80" height="6" rx="2" fill="#1e3a5f"/>
+
+  <rect x="252" y="220" width="156" height="88" rx="8" fill="#112240" stroke="#1e3a5f" stroke-width="1"/>
+  <rect x="256" y="224" width="148" height="12" rx="3" fill="#e11d48"/>
+  <rect x="256" y="242" width="110" height="6" rx="2" fill="#1e3a5f"/>
+  <rect x="256" y="254" width="90" height="6" rx="2" fill="#1e3a5f"/>
+  <rect x="256" y="266" width="130" height="6" rx="2" fill="#1e3a5f"/>
+
+  <rect x="424" y="220" width="156" height="88" rx="8" fill="#112240" stroke="#1e3a5f" stroke-width="1"/>
+  <rect x="428" y="224" width="148" height="12" rx="3" fill="#0891b2"/>
+  <rect x="428" y="242" width="120" height="6" rx="2" fill="#1e3a5f"/>
+  <rect x="428" y="254" width="95" height="6" rx="2" fill="#1e3a5f"/>
+  <rect x="428" y="266" width="140" height="6" rx="2" fill="#1e3a5f"/>
+
+  <rect x="596" y="220" width="156" height="88" rx="8" fill="#112240" stroke="#1e3a5f" stroke-width="1"/>
+  <rect x="600" y="224" width="148" height="12" rx="3" fill="#059669"/>
+  <rect x="600" y="242" width="105" height="6" rx="2" fill="#1e3a5f"/>
+  <rect x="600" y="254" width="85" height="6" rx="2" fill="#1e3a5f"/>
+  <rect x="600" y="266" width="125" height="6" rx="2" fill="#1e3a5f"/>
+
+  <rect x="768" y="220" width="156" height="88" rx="8" fill="#112240" stroke="#1e3a5f" stroke-width="1"/>
+  <rect x="772" y="224" width="148" height="12" rx="3" fill="#d97706"/>
+  <rect x="772" y="242" width="115" height="6" rx="2" fill="#1e3a5f"/>
+  <rect x="772" y="254" width="90" height="6" rx="2" fill="#1e3a5f"/>
+
+  <rect x="940" y="220" width="156" height="88" rx="8" fill="#112240" stroke="#1450a3" stroke-width="1.5"/>
+  <rect x="944" y="224" width="148" height="12" rx="3" fill="#1450a3"/>
+  <rect x="944" y="252" width="80" height="28" rx="4" fill="#1e3a5f"/>
+  <rect x="1034" y="252" width="50" height="28" rx="4" fill="#1e3a5f"/>
+
+  <!-- "16 slides" label -->
+  <text x="1018" y="218" fill="#475569" font-family="Arial" font-size="13" text-anchor="middle">16 slides · ~5 min</text>
+
+  <!-- Main title area -->
+  <text x="640" y="88" fill="#f1f5f9" font-family="Arial" font-size="38" font-weight="800" text-anchor="middle" letter-spacing="-1">CareLayer AI — Platform Overview</text>
+  <text x="640" y="126" fill="#0891b2" font-family="Arial" font-size="18" text-anchor="middle">Investor &amp; Sales Demo · Validation · AI Reporting · Market Opportunity</text>
+
+  <!-- Feature tags -->
+  <rect x="282" y="348" width="176" height="30" rx="15" fill="#0c2e48" stroke="#1450a3" stroke-width="1"/>
+  <text x="370" y="368" fill="#7dd3fc" font-family="Arial" font-size="13" font-weight="700" text-anchor="middle">Pre-Submission Validation</text>
+
+  <rect x="474" y="348" width="160" height="30" rx="15" fill="#0c2e48" stroke="#0891b2" stroke-width="1"/>
+  <text x="554" y="368" fill="#7dd3fc" font-family="Arial" font-size="13" font-weight="700" text-anchor="middle">AI-Driven Reporting</text>
+
+  <rect x="650" y="348" width="172" height="30" rx="15" fill="#0c2e48" stroke="#059669" stroke-width="1"/>
+  <text x="736" y="368" fill="#6ee7b7" font-family="Arial" font-size="13" font-weight="700" text-anchor="middle">No-Code Metadata</text>
+
+  <rect x="838" y="348" width="160" height="30" rx="15" fill="#0c2e48" stroke="#d97706" stroke-width="1"/>
+  <text x="918" y="368" fill="#fcd34d" font-family="Arial" font-size="13" font-weight="700" text-anchor="middle">Governed AI</text>
+
+  <!-- Play button -->
+  <circle cx="640" cy="550" r="48" fill="rgba(20,80,163,0.25)" stroke="#1450a3" stroke-width="2"/>
+  <polygon points="627,530 627,570 672,550" fill="#7dd3fc"/>
+  <text x="640" y="625" fill="#475569" font-family="Arial" font-size="14" text-anchor="middle">Click to play</text>
+</svg>
