@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CareLayer AI</title>
-    <meta name="description" content="CareLayer AI is building AI-powered healthcare platforms for operations, revenue cycle, workflow automation, and decision support." />
+    <meta name="description" content="CareLayer AI is exploring intelligent workflow solutions for cashless claims, prior authorization, evidence validation, and healthcare interoperability." />
 
     <style>
         :root {
@@ -358,6 +358,24 @@
           border: 1px solid #1e3a5f;
         }
 
+        .claim-demo {
+          margin-top: 20px;
+          padding: 28px;
+          border-radius: 18px;
+          background: linear-gradient(135deg, #f0fdfa, #eff6ff);
+          border: 1px solid #99f6e4;
+          box-shadow: 0 12px 28px rgba(15, 23, 42, 0.05);
+        }
+        .claim-demo h3 { margin: 0 0 10px; font-size: 22px; }
+        .claim-demo p { font-size: 16px; margin: 0 0 14px; }
+        .video-badge.badge-claims {
+          background: #ccfbf1; color: #0f766e; border: 1px solid #99f6e4;
+        }
+        .claim-feature-grid {
+          display: grid; grid-template-columns: 1fr 1fr; gap: 9px 18px;
+          margin: 16px 0; color: #334155; font-size: 14px; font-weight: 700;
+        }
+
         .contact {
           margin-top: 42px;
           padding: 26px;
@@ -396,6 +414,7 @@
           .nav { align-items: flex-start; gap: 16px; flex-direction: column; }
           .founder-line { flex-direction: column; }
           .pill-row { gap: 5px; }
+          .claim-feature-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -412,14 +431,14 @@
 
     <main class="hero">
         <div class="content">
-            <div class="eyebrow">Healthcare Operations • AI • Workflow Intelligence</div>
+            <div class="eyebrow">Healthcare Evidence • Claims • Workflow Intelligence</div>
 
-            <h1>Intelligent workflow layers for modern healthcare operations.</h1>
+            <h1>Making healthcare evidence easier to review, validate and act on.</h1>
 
             <p class="tagline">
-                CareLayer AI is building AI-powered healthcare platforms to improve
-                hospital operations, revenue cycle workflows, prior authorization,
-                intelligent data access, and decision support.
+                CareLayer AI is exploring intelligent workflow solutions that help hospitals and healthcare
+                organizations reduce administrative friction across cashless claims, prior authorization,
+                and clinical-financial evidence review.
             </p>
 
             <div class="cta-row">
@@ -427,27 +446,26 @@
                 <a class="btn btn-secondary" href="/mnidugondi.html">Meet the Founder</a>
             </div>
 
-            <h2>The Problem</h2>
+            <h2>Current Research: Cashless Claims &amp; Pre-Authorization</h2>
             <p>
-                Healthcare organizations continue to operate with fragmented workflows,
-                manual coordination, disconnected data, and administrative bottlenecks.
-                These gaps create operational inefficiency, revenue leakage, avoidable
-                rework, and delayed decision-making.
+                Hospital insurance teams often coordinate information across claim forms, discharge summaries,
+                bills, laboratory reports, diagnostic reports, and policy documents. When information is incomplete
+                or inconsistent, the result can be repeated payer queries, additional documentation requests,
+                discharge delays, and manual rework.
             </p>
 
             <h2>Our Approach</h2>
             <p>
-                CareLayer AI is being designed as a modular intelligence layer that works
-                with existing healthcare systems instead of replacing them. The goal is to
-                help teams automate workflows, surface insights, reduce administrative
-                friction, and make better operational decisions.
+                CareLayer AI is exploring how an evidence intelligence layer can work with existing hospital and
+                payer systems to identify documentation and evidence issues before submission, connect clinical
+                and financial information, and support faster human review without replacing the reviewer.
             </p>
 
             <div class="grid">
                 <div class="box">
                     <div class="icon">🏥</div>
-                    <strong>Hospital Operations</strong>
-                    <span>Improve visibility into workflows, escalations, delays, and operational coordination.</span>
+                    <strong>Cashless Claims &amp; Revenue Cycle</strong>
+                    <span>Reduce documentation gaps, payer queries, claim rework, billing inconsistencies, and discharge delays.</span>
                 </div>
 
                 <div class="box">
@@ -458,23 +476,26 @@
 
                 <div class="box">
                     <div class="icon">⚙️</div>
-                    <strong>Prior Authorization</strong>
-                    <span>Support documentation readiness, payer-specific rules, and faster turnaround.</span>
+                    <strong>Evidence Intelligence</strong>
+                    <span>Connect diagnoses, treatments, labs, discharge documentation, bills, and policy information into one evidence view.</span>
                 </div>
 
                 <div class="box">
                     <div class="icon">🔎</div>
-                    <strong>Decision Support</strong>
-                    <span>Use AI-assisted data access and semantic search to help teams answer workflow questions faster.</span>
+                    <strong>Healthcare Interoperability</strong>
+                    <span>Integrate intelligent workflows with existing hospital and payer systems using standards such as FHIR.</span>
                 </div>
             </div>
 
-            <h2>Current Focus</h2>
+            <h2>We Are Speaking With Hospitals</h2>
             <p>
-                We are currently engaging with healthcare operators, clinicians, product
-                leaders, and technology executives across the US and India to validate
-                high-impact problem areas before building production-ready solutions.
+                We are currently speaking with hospital Insurance/TPA Desk, billing, revenue-cycle, and technology
+                teams in India to understand where the greatest operational friction exists. Our goal is simple:
+                understand where hospitals lose the most time before deciding what technology should be built.
             </p>
+            <div class="cta-row">
+                <a class="btn btn-primary" href="mailto:hello@carelayerai.com?subject=Hospital%20Cashless%20Claims%20Workflow%20Discussion">Share Your Workflow</a>
+            </div>
 
             <div class="highlight">
                 <div class="founder-line">
@@ -483,7 +504,7 @@
                         <h2 style="margin-top:0;">Founder Background</h2>
                         <p>
                             CareLayer AI is led by <a href="/mnidugondi.html">Murali Nidugondi</a>,
-                            a senior healthcare technology leader with 20+ years of experience
+                            a senior healthcare technology leader with 28+ years of experience
                             designing and modernizing enterprise platforms across healthcare,
                             distributed systems, cloud-native architecture, and AI-enabled systems.
                         </p>
@@ -495,14 +516,32 @@
                 </div>
             </div>
 
-            <h2>Platform Vision &amp; Demos</h2>
+            <h2>Prototype &amp; Platform Demos</h2>
 
             <p>
-                The demos below show two sides of the CareLayer AI platform — the interoperability
-                and workflow engine, and the AI-powered validation and reporting intelligence layer.
+                Our prototypes explore how fragmented healthcare information can be transformed into structured,
+                explainable evidence for human review while integrating with existing healthcare systems.
             </p>
 
-<!-- ── Demo cards: side by side ─────────────────────────────── -->
+            <div class="claim-demo">
+                <div class="video-badge badge-claims">🧾 Claim Evidence Review Prototype</div>
+                <h3>From Hospital Documents to a Unified Evidence View</h3>
+                <p>
+                    An early prototype that analyzes multi-document claim packages and creates a structured view for human review.
+                    It demonstrates discharge-summary-led synthesis, bill-to-clinical evidence mapping, diagnosis normalization,
+                    cross-document identity checks, gap detection, and pre-authorization-to-discharge comparison.
+                </p>
+                <div class="claim-feature-grid">
+                    <span>✓ Multi-document analysis</span><span>✓ Clinical + billing evidence mapping</span>
+                    <span>✓ Evidence-gap detection</span><span>✓ Pre-auth → discharge comparison</span>
+                    <span>✓ Cross-document consistency</span><span>✓ Human-in-the-loop review</span>
+                </div>
+                <div class="cta-row" style="margin-bottom:0;">
+                    <a class="btn btn-primary" href="mailto:hello@carelayerai.com?subject=Claim%20Evidence%20Review%20Demo">Request a Demo</a>
+                </div>
+                <p class="card-meta">Prototype capabilities are under active validation with healthcare domain experts. No payer or provider endorsement is implied.</p>
+            </div>
+
             <div class="demo-grid">
 
                 <!-- Demo 1: Interoperability -->
@@ -566,8 +605,8 @@
 
             <section class="contact">
                 <div>
-                    <strong>Interested in healthcare innovation?</strong>
-                    <p>We are validating problems with operators, clinicians, and technology leaders.</p>
+                    <strong>Work with cashless claims or pre-authorization?</strong>
+                    <p>We would value 15–20 minutes to learn where your team sees the most rework, payer queries, and delays.</p>
                 </div>
                 <a href="mailto:hello@carelayerai.com">hello@carelayerai.com</a>
             </section>
