@@ -376,6 +376,97 @@
           margin: 16px 0; color: #334155; font-size: 14px; font-weight: 700;
         }
 
+        /* ── YouTube demo section ─────────────────────────────────── */
+        .yt-demo-section {
+          margin-top: 32px;
+        }
+        .yt-demo-section > p {
+          font-size: 17px; margin: 0 0 18px;
+        }
+        .yt-demo-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 18px;
+          align-items: start;
+        }
+        .yt-card {
+          background: linear-gradient(180deg, #ffffff, #f8fafc);
+          border: 1px solid #e2e8f0;
+          border-radius: 16px;
+          overflow: hidden;
+          box-shadow: 0 4px 18px rgba(15,23,42,0.07);
+        }
+        .yt-card-header {
+          padding: 18px 18px 12px;
+        }
+        .yt-card-header h3 {
+          margin: 8px 0 6px;
+          font-size: 15px;
+          font-weight: 800;
+          color: #0f172a;
+          line-height: 1.4;
+          letter-spacing: -0.01em;
+        }
+        .yt-card-header p {
+          font-size: 13px;
+          color: #475569;
+          line-height: 1.55;
+          margin: 0 0 10px;
+        }
+        .yt-step-pills {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 5px;
+          margin-bottom: 10px;
+        }
+        .yt-step-pill {
+          font-size: 10px;
+          font-weight: 700;
+          padding: 3px 9px;
+          border-radius: 999px;
+          background: #f0f9ff;
+          border: 1px solid #bae6fd;
+          color: #0369a1;
+        }
+        .yt-step-pill.green {
+          background: #f0fdf4;
+          border-color: #bbf7d0;
+          color: #15803d;
+        }
+        .yt-embed {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 16 / 9;
+          background: #0f172a;
+        }
+        .yt-embed iframe {
+          position: absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          border: none;
+        }
+        .yt-card-footer {
+          padding: 8px 18px 14px;
+          font-size: 11px;
+          color: #94a3b8;
+        }
+        .yt-card.featured {
+          border-color: #99f6e4;
+          box-shadow: 0 6px 24px rgba(15,118,110,0.10);
+        }
+        .yt-card.featured .yt-card-header {
+          background: linear-gradient(135deg, #f0fdfa, #eff6ff);
+        }
+        .video-badge.badge-workflow {
+          background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0;
+        }
+        .video-badge.badge-outpatient {
+          background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe;
+        }
+        @media (max-width: 780px) {
+          .yt-demo-grid { grid-template-columns: 1fr; }
+        }
+
         .contact {
           margin-top: 42px;
           padding: 26px;
@@ -609,6 +700,70 @@
                     <p class="card-meta">* Platform walkthrough with voiceover — problem, architecture, workflow demo, and capabilities.</p>
                 </div>
 
+            </div>
+
+            <h2>Workflow Demos</h2>
+
+            <div class="yt-demo-section">
+                <p>
+                    Watch CareLayer AI handle real healthcare workflows — from the moment a patient registers
+                    through claims submission, and as a focused outpatient clinic experience.
+                </p>
+
+                <div class="yt-demo-grid">
+
+                    <!-- Demo 1: Full journey — outpatient → inpatient → claims -->
+                    <div class="yt-card featured">
+                        <div class="yt-card-header">
+                            <div class="video-badge badge-workflow">🏥 End-to-End Workflow</div>
+                            <h3>Outpatient Admission → Inpatient Care → Claims</h3>
+                            <p>
+                                A complete patient journey: outpatient registration and triage, transition to
+                                inpatient admission, clinical documentation, and all the way through to claim
+                                evidence review and submission readiness.
+                            </p>
+                            <div class="yt-step-pills">
+                                <span class="yt-step-pill">Outpatient Reg.</span>
+                                <span class="yt-step-pill">→ Inpatient Admission</span>
+                                <span class="yt-step-pill">→ Clinical Docs</span>
+                                <span class="yt-step-pill green">→ Claims Review</span>
+                            </div>
+                        </div>
+                        <div class="yt-embed">
+                            <iframe src="https://www.youtube.com/embed/FCwaUW42ZHY"
+                                    title="CareLayer AI — Outpatient to Inpatient to Claims Workflow Demo"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen loading="lazy"></iframe>
+                        </div>
+                        <p class="yt-card-footer">End-to-end prototype walkthrough · Not a production deployment</p>
+                    </div>
+
+                    <!-- Demo 2: Outpatient clinic -->
+                    <div class="yt-card">
+                        <div class="yt-card-header">
+                            <div class="video-badge badge-outpatient">🩺 Outpatient Clinics</div>
+                            <h3>Outpatient Clinic Workflow</h3>
+                            <p>
+                                A focused demonstration of CareLayer AI supporting outpatient clinic operations —
+                                registration, consultation documentation, pre-authorization readiness,
+                                and structured evidence for review.
+                            </p>
+                            <div class="yt-step-pills">
+                                <span class="yt-step-pill" style="background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8;">Registration</span>
+                                <span class="yt-step-pill" style="background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8;">Consultation Docs</span>
+                                <span class="yt-step-pill" style="background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8;">Pre-Auth Readiness</span>
+                            </div>
+                        </div>
+                        <div class="yt-embed">
+                            <iframe src="https://www.youtube.com/embed/iijnstUel0Y"
+                                    title="CareLayer AI — Outpatient Clinic Workflow Demo"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen loading="lazy"></iframe>
+                        </div>
+                        <p class="yt-card-footer">Outpatient clinic prototype walkthrough · Not a production deployment</p>
+                    </div>
+
+                </div>
             </div>
 
             <h2>Product Engineering</h2>
